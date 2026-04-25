@@ -23,13 +23,11 @@ Three independently managed subsystems each with their own launch file and lifec
 - `velocity_smoother` — Enforces acceleration limits before commands reach hardware
 
 ## Master Launch Orchestration
-Single command launches the entire pipeline in a time-synchronized sequence:
-\```
-t = 0s  → Map server starts
-t = 3s  → AMCL starts and receives map
-t = 6s  → Initial pose injected, map→odom transform established
-t = 10s → Navigation stack starts with all transforms ready
-\```
+Single command launches the entire pipeline in a time-synchronized sequence:                               
+t = 0s  → Map server starts                                                                                
+t = 3s  → AMCL starts and receives map                                                                     
+t = 6s  → Initial pose injected, map→odom transform established                                            
+t = 10s → Navigation stack starts with all transforms ready            
 
 ## Challenges
 - Configured Docker environment with X11 forwarding and DDS networking for ROS2 Humble + Gazebo Classic compatibility
@@ -39,12 +37,11 @@ t = 10s → Navigation stack starts with all transforms ready
 - Lifecycle node race conditions on startup — resolved using `TimerAction` delays in master launch file
 
 ## How to Run
-\```bash
-cd ~/assignment_ws
-colcon build --packages-select testbed_navigation
-source install/setup.bash
-ros2 launch testbed_navigation master.launch.py
-\```
+cd ~/assignment_ws                                                                                         
+colcon build --packages-select testbed_navigation                                                          
+source install/setup.bash                                                                                  
+ros2 launch testbed_navigation master.launch.py                                                            
+
 Robot localizes and is ready for navigation goals via **2D Goal Pose** in RViz2 within ~15 seconds.
 
 ## Dependencies
