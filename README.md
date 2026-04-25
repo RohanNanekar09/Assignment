@@ -1,5 +1,4 @@
 # testbed_navigation
-### ROS2 Navigation Assignment – Rohan Nanekar
 
 ## Overview
 Built a fully modular ROS2 navigation pipeline for the Testbed-T1.0.0 robot by directly orchestrating individual Nav2 plugins — completely bypassing `nav2_bringup`. Each component was manually instantiated, parameterized, and lifecycle-managed giving full control over the navigation stack.
