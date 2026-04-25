@@ -8,21 +8,6 @@ Built a fully modular ROS2 navigation pipeline for the Testbed-T1.0.0 robot by d
 - Nav2 required ROS2 Humble + Gazebo Classic
 - Resolved via Docker-based isolated environment with X11 forwarding for RViz2 and Gazebo GUI
 
-## Package Structure
-\```
-testbed_navigation/
-├── config/
-│   ├── amcl_params.yaml
-│   └── nav2_params.yaml
-├── launch/
-│   ├── map_loader.launch.py
-│   ├── localization.launch.py
-│   ├── navigation.launch.py
-│   └── master.launch.py
-├── navigation.rviz
-└── README.md
-\```
-
 ## Architecture
 Three independently managed subsystems each with their own launch file and lifecycle manager:
 
